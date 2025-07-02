@@ -1,0 +1,10 @@
+2025-06-03 16:49:21,611 - train - INFO - ComboMTL(
+  (protein_embedding): Embedding(15970, 64)
+  (cell_embedding): Embedding(76, 64)
+  (drug_embedding): Embedding(764, 64)
+  (aggregation_function): Linear(in_features=128, out_features=64, bias=True)
+  (neighbor_proj): Linear(in_features=128, out_features=512, bias=True)
+  (combine_function): Linear(in_features=128, out_features=64, bias=False)
+)
+Trainable parameters: 1158336
+2025-06-03 16:49:21,613 - trainer - WARNING - Warning: There's no GPU available on this machine,training will be performed on CPU.

@@ -1,0 +1,38 @@
+2025-06-04 17:40:29,138 - train - INFO - ComboMTL(
+  (protein_embedding): Embedding(15970, 128)
+  (cell_embedding): Embedding(76, 128)
+  (drug_embedding): Embedding(764, 128)
+  (aggregation_function): Linear(in_features=384, out_features=128, bias=True)
+  (neighbor_proj): Linear(in_features=128, out_features=512, bias=True)
+  (trans_Q): Linear(in_features=384, out_features=128, bias=True)
+  (trans_K): Linear(in_features=384, out_features=128, bias=True)
+  (trans_V): Linear(in_features=384, out_features=128, bias=True)
+  (linears): ModuleList(
+    (0): Linear(in_features=128, out_features=384, bias=True)
+    (1): Linear(in_features=128, out_features=384, bias=True)
+    (2): Linear(in_features=128, out_features=384, bias=True)
+    (3): Linear(in_features=128, out_features=384, bias=True)
+  )
+  (projection): Linear(in_features=384, out_features=384, bias=True)
+  (attention_layers): ModuleList(
+    (0): Linear(in_features=128, out_features=128, bias=False)
+    (1): Linear(in_features=128, out_features=128, bias=False)
+    (2): Linear(in_features=128, out_features=128, bias=False)
+  )
+  (actP): PReLU(num_parameters=1)
+  (drop_out): Dropout(p=0.5, inplace=False)
+  (global_attn): Sequential(
+    (0): Linear(in_features=128, out_features=128, bias=True)
+    (1): GELU()
+    (2): Linear(in_features=128, out_features=1, bias=True)
+  )
+  (local_attn): Sequential(
+    (0): Linear(in_features=256, out_features=128, bias=True)
+    (1): GELU()
+    (2): Linear(in_features=128, out_features=1, bias=True)
+  )
+  (out_transform): Linear(in_features=128, out_features=128, bias=True)
+  (combine_function): Linear(in_features=256, out_features=128, bias=False)
+)
+Trainable parameters: 2908931
+2025-06-04 17:40:29,139 - trainer - WARNING - Warning: There's no GPU available on this machine,training will be performed on CPU.

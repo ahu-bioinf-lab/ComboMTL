@@ -1,0 +1,9 @@
+2023-12-29 09:35:36,772 - train - INFO - GraphSynergy(
+  (protein_embedding): Embedding(15970, 32)
+  (cell_embedding): Embedding(29, 32)
+  (drug_embedding): Embedding(21, 32)
+  (aggregation_function): Linear(in_features=64, out_features=32, bias=True)
+  (combine_function): Linear(in_features=64, out_features=32, bias=False)
+)
+Trainable parameters: 516768
+2023-12-29 09:35:36,773 - trainer - WARNING - Warning: There's no GPU available on this machine,training will be performed on CPU.

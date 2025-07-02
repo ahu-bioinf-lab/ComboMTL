@@ -1,0 +1,579 @@
+2025-06-13 10:29:56,851 - train - INFO - ********* Fold 1 training *********
+2025-06-13 10:29:57,025 - train - INFO - ComboMTL(
+  (protein_embedding): Embedding(15970, 128)
+  (cell_embedding): Embedding(76, 128)
+  (drug_embedding): Embedding(764, 128)
+  (aggregation_function): Linear(in_features=384, out_features=128, bias=True)
+  (neighbor_proj): Linear(in_features=128, out_features=512, bias=True)
+  (trans_Q): Linear(in_features=384, out_features=128, bias=True)
+  (trans_K): Linear(in_features=384, out_features=128, bias=True)
+  (trans_V): Linear(in_features=384, out_features=128, bias=True)
+  (linears): ModuleList(
+    (0): Linear(in_features=128, out_features=384, bias=True)
+    (1): Linear(in_features=128, out_features=384, bias=True)
+    (2): Linear(in_features=128, out_features=384, bias=True)
+    (3): Linear(in_features=128, out_features=384, bias=True)
+  )
+  (projection): Linear(in_features=384, out_features=384, bias=True)
+  (attention_layers): ModuleList(
+    (0): Linear(in_features=128, out_features=128, bias=False)
+    (1): Linear(in_features=128, out_features=128, bias=False)
+    (2): Linear(in_features=128, out_features=128, bias=False)
+  )
+  (actP): PReLU(num_parameters=1)
+  (drop_out): Dropout(p=0.5, inplace=False)
+  (global_attn): Sequential(
+    (0): Linear(in_features=128, out_features=128, bias=True)
+    (1): GELU(approximate=none)
+    (2): Linear(in_features=128, out_features=1, bias=True)
+  )
+  (local_attn): Sequential(
+    (0): Linear(in_features=256, out_features=128, bias=True)
+    (1): GELU(approximate=none)
+    (2): Linear(in_features=128, out_features=1, bias=True)
+  )
+  (out_transform): Linear(in_features=128, out_features=128, bias=True)
+  (transform): Linear(in_features=256, out_features=256, bias=True)
+  (gate): Linear(in_features=256, out_features=256, bias=True)
+  (carry): Linear(in_features=256, out_features=256, bias=True)
+  (syfcn): Sequential(
+    (0): Linear(in_features=384, out_features=128, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.2, inplace=False)
+    (3): Linear(in_features=128, out_features=1, bias=True)
+  )
+  (sifcn): Sequential(
+    (0): Linear(in_features=256, out_features=128, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.2, inplace=False)
+    (3): Linear(in_features=128, out_features=1, bias=True)
+  )
+)
+Trainable parameters: 3155973
+2025-06-13 10:36:01,796 - trainer - INFO - epoch: 1
+2025-06-13 10:36:01,796 - trainer - INFO -     train          : loss           : 0.66	accuracy       : 0.55	precision      : 0.26	recall         : 0.02	roc_auc        : 0.59	pr_auc         : 0.54	f1_score       : 0.03	
+2025-06-13 10:36:01,796 - trainer - INFO -     validation     : val_loss       : 0.63	val_accuracy   : 0.58	val_precision  : 0.70	val_recall     : 0.12	val_roc_auc    : 0.64	val_pr_auc     : 0.59	val_f1_score   : 0.20	
+2025-06-13 10:36:01,858 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 10:42:01,665 - trainer - INFO - epoch: 2
+2025-06-13 10:42:01,665 - trainer - INFO -     train          : loss           : 0.61	accuracy       : 0.62	precision      : 0.62	recall         : 0.48	roc_auc        : 0.67	pr_auc         : 0.62	f1_score       : 0.51	
+2025-06-13 10:42:01,665 - trainer - INFO -     validation     : val_loss       : 0.60	val_accuracy   : 0.63	val_precision  : 0.58	val_recall     : 0.62	val_roc_auc    : 0.68	val_pr_auc     : 0.63	val_f1_score   : 0.60	
+2025-06-13 10:42:01,716 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 10:47:55,182 - trainer - INFO - epoch: 3
+2025-06-13 10:47:55,183 - trainer - INFO -     train          : loss           : 0.60	accuracy       : 0.65	precision      : 0.63	recall         : 0.57	roc_auc        : 0.69	pr_auc         : 0.65	f1_score       : 0.59	
+2025-06-13 10:47:55,183 - trainer - INFO -     validation     : val_loss       : 0.60	val_accuracy   : 0.65	val_precision  : 0.61	val_recall     : 0.60	val_roc_auc    : 0.70	val_pr_auc     : 0.65	val_f1_score   : 0.61	
+2025-06-13 10:47:55,233 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 10:53:48,146 - trainer - INFO - epoch: 4
+2025-06-13 10:53:48,146 - trainer - INFO -     train          : loss           : 0.59	accuracy       : 0.65	precision      : 0.64	recall         : 0.56	roc_auc        : 0.70	pr_auc         : 0.65	f1_score       : 0.59	
+2025-06-13 10:53:48,147 - trainer - INFO -     validation     : val_loss       : 0.59	val_accuracy   : 0.66	val_precision  : 0.62	val_recall     : 0.60	val_roc_auc    : 0.70	val_pr_auc     : 0.65	val_f1_score   : 0.61	
+2025-06-13 10:53:48,191 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 10:59:39,860 - trainer - INFO - epoch: 5
+2025-06-13 10:59:39,861 - trainer - INFO -     train          : loss           : 0.59	accuracy       : 0.66	precision      : 0.64	recall         : 0.56	roc_auc        : 0.71	pr_auc         : 0.67	f1_score       : 0.59	
+2025-06-13 10:59:39,861 - trainer - INFO -     validation     : val_loss       : 0.59	val_accuracy   : 0.66	val_precision  : 0.63	val_recall     : 0.61	val_roc_auc    : 0.71	val_pr_auc     : 0.66	val_f1_score   : 0.62	
+2025-06-13 10:59:39,915 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 11:05:31,905 - trainer - INFO - epoch: 6
+2025-06-13 11:05:31,905 - trainer - INFO -     train          : loss           : 0.58	accuracy       : 0.66	precision      : 0.65	recall         : 0.57	roc_auc        : 0.72	pr_auc         : 0.68	f1_score       : 0.61	
+2025-06-13 11:05:31,905 - trainer - INFO -     validation     : val_loss       : 0.58	val_accuracy   : 0.67	val_precision  : 0.65	val_recall     : 0.58	val_roc_auc    : 0.72	val_pr_auc     : 0.68	val_f1_score   : 0.62	
+2025-06-13 11:05:31,957 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 11:11:24,413 - trainer - INFO - epoch: 7
+2025-06-13 11:11:24,414 - trainer - INFO -     train          : loss           : 0.58	accuracy       : 0.67	precision      : 0.66	recall         : 0.57	roc_auc        : 0.73	pr_auc         : 0.69	f1_score       : 0.61	
+2025-06-13 11:11:24,414 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.66	val_recall     : 0.54	val_roc_auc    : 0.73	val_pr_auc     : 0.68	val_f1_score   : 0.60	
+2025-06-13 11:11:24,466 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 11:17:16,549 - trainer - INFO - epoch: 8
+2025-06-13 11:17:16,550 - trainer - INFO -     train          : loss           : 0.58	accuracy       : 0.67	precision      : 0.66	recall         : 0.58	roc_auc        : 0.73	pr_auc         : 0.69	f1_score       : 0.61	
+2025-06-13 11:17:16,550 - trainer - INFO -     validation     : val_loss       : 0.58	val_accuracy   : 0.67	val_precision  : 0.64	val_recall     : 0.60	val_roc_auc    : 0.73	val_pr_auc     : 0.68	val_f1_score   : 0.62	
+2025-06-13 11:17:16,600 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 11:23:09,230 - trainer - INFO - epoch: 9
+2025-06-13 11:23:09,231 - trainer - INFO -     train          : loss           : 0.57	accuracy       : 0.67	precision      : 0.66	recall         : 0.58	roc_auc        : 0.73	pr_auc         : 0.69	f1_score       : 0.62	
+2025-06-13 11:23:09,231 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.65	val_recall     : 0.56	val_roc_auc    : 0.73	val_pr_auc     : 0.68	val_f1_score   : 0.60	
+2025-06-13 11:23:09,280 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 11:29:01,461 - trainer - INFO - epoch: 10
+2025-06-13 11:29:01,461 - trainer - INFO -     train          : loss           : 0.57	accuracy       : 0.67	precision      : 0.66	recall         : 0.57	roc_auc        : 0.73	pr_auc         : 0.69	f1_score       : 0.61	
+2025-06-13 11:29:01,462 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.65	val_recall     : 0.60	val_roc_auc    : 0.73	val_pr_auc     : 0.68	val_f1_score   : 0.62	
+2025-06-13 11:29:01,512 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 11:34:54,243 - trainer - INFO - epoch: 11
+2025-06-13 11:34:54,244 - trainer - INFO -     train          : loss           : 0.57	accuracy       : 0.67	precision      : 0.66	recall         : 0.58	roc_auc        : 0.73	pr_auc         : 0.69	f1_score       : 0.62	
+2025-06-13 11:34:54,244 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.65	val_recall     : 0.58	val_roc_auc    : 0.73	val_pr_auc     : 0.68	val_f1_score   : 0.61	
+2025-06-13 11:34:54,289 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 11:40:47,322 - trainer - INFO - epoch: 12
+2025-06-13 11:40:47,323 - trainer - INFO -     train          : loss           : 0.57	accuracy       : 0.67	precision      : 0.66	recall         : 0.58	roc_auc        : 0.73	pr_auc         : 0.69	f1_score       : 0.61	
+2025-06-13 11:40:47,323 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.64	val_recall     : 0.60	val_roc_auc    : 0.73	val_pr_auc     : 0.68	val_f1_score   : 0.62	
+2025-06-13 11:46:39,280 - trainer - INFO - epoch: 13
+2025-06-13 11:46:39,280 - trainer - INFO -     train          : loss           : 0.57	accuracy       : 0.67	precision      : 0.66	recall         : 0.57	roc_auc        : 0.73	pr_auc         : 0.69	f1_score       : 0.61	
+2025-06-13 11:46:39,280 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.64	val_recall     : 0.59	val_roc_auc    : 0.73	val_pr_auc     : 0.68	val_f1_score   : 0.61	
+2025-06-13 11:52:32,642 - trainer - INFO - epoch: 14
+2025-06-13 11:52:32,643 - trainer - INFO -     train          : loss           : 0.57	accuracy       : 0.67	precision      : 0.66	recall         : 0.58	roc_auc        : 0.73	pr_auc         : 0.70	f1_score       : 0.62	
+2025-06-13 11:52:32,643 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.65	val_recall     : 0.58	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.62	
+2025-06-13 11:52:32,688 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 11:58:24,709 - trainer - INFO - epoch: 15
+2025-06-13 11:58:24,710 - trainer - INFO -     train          : loss           : 0.57	accuracy       : 0.67	precision      : 0.66	recall         : 0.58	roc_auc        : 0.73	pr_auc         : 0.70	f1_score       : 0.62	
+2025-06-13 11:58:24,710 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.65	val_recall     : 0.59	val_roc_auc    : 0.73	val_pr_auc     : 0.68	val_f1_score   : 0.62	
+2025-06-13 11:58:24,760 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 12:04:16,765 - trainer - INFO - epoch: 16
+2025-06-13 12:04:16,766 - trainer - INFO -     train          : loss           : 0.57	accuracy       : 0.67	precision      : 0.66	recall         : 0.58	roc_auc        : 0.73	pr_auc         : 0.70	f1_score       : 0.62	
+2025-06-13 12:04:16,766 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.65	val_recall     : 0.59	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.62	
+2025-06-13 12:10:08,331 - trainer - INFO - epoch: 17
+2025-06-13 12:10:08,331 - trainer - INFO -     train          : loss           : 0.57	accuracy       : 0.67	precision      : 0.66	recall         : 0.58	roc_auc        : 0.73	pr_auc         : 0.70	f1_score       : 0.62	
+2025-06-13 12:10:08,332 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.66	val_recall     : 0.56	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.61	
+2025-06-13 12:10:08,382 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 12:15:59,525 - trainer - INFO - epoch: 18
+2025-06-13 12:15:59,526 - trainer - INFO -     train          : loss           : 0.57	accuracy       : 0.67	precision      : 0.66	recall         : 0.58	roc_auc        : 0.73	pr_auc         : 0.70	f1_score       : 0.62	
+2025-06-13 12:15:59,526 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.64	val_recall     : 0.61	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.62	
+2025-06-13 12:15:59,572 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 12:21:50,447 - trainer - INFO - epoch: 19
+2025-06-13 12:21:50,447 - trainer - INFO -     train          : loss           : 0.57	accuracy       : 0.67	precision      : 0.66	recall         : 0.58	roc_auc        : 0.73	pr_auc         : 0.70	f1_score       : 0.62	
+2025-06-13 12:21:50,448 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.64	val_recall     : 0.59	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.62	
+2025-06-13 12:27:42,104 - trainer - INFO - epoch: 20
+2025-06-13 12:27:42,104 - trainer - INFO -     train          : loss           : 0.57	accuracy       : 0.68	precision      : 0.67	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.70	f1_score       : 0.62	
+2025-06-13 12:27:42,104 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.66	val_recall     : 0.57	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.61	
+2025-06-13 12:27:42,150 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 12:33:38,648 - trainer - INFO - epoch: 21
+2025-06-13 12:33:38,649 - trainer - INFO -     train          : loss           : 0.57	accuracy       : 0.67	precision      : 0.67	recall         : 0.57	roc_auc        : 0.74	pr_auc         : 0.70	f1_score       : 0.62	
+2025-06-13 12:33:38,649 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.65	val_recall     : 0.59	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.62	
+2025-06-13 12:33:38,696 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 12:39:31,808 - trainer - INFO - epoch: 22
+2025-06-13 12:39:31,808 - trainer - INFO -     train          : loss           : 0.57	accuracy       : 0.67	precision      : 0.66	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.70	f1_score       : 0.62	
+2025-06-13 12:39:31,808 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.65	val_recall     : 0.59	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.61	
+2025-06-13 12:45:22,129 - trainer - INFO - epoch: 23
+2025-06-13 12:45:22,129 - trainer - INFO -     train          : loss           : 0.57	accuracy       : 0.67	precision      : 0.66	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.70	f1_score       : 0.62	
+2025-06-13 12:45:22,129 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.65	val_recall     : 0.60	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.62	
+2025-06-13 12:51:12,553 - trainer - INFO - epoch: 24
+2025-06-13 12:51:12,553 - trainer - INFO -     train          : loss           : 0.56	accuracy       : 0.68	precision      : 0.67	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.71	f1_score       : 0.62	
+2025-06-13 12:51:12,553 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.65	val_recall     : 0.60	val_roc_auc    : 0.74	val_pr_auc     : 0.69	val_f1_score   : 0.62	
+2025-06-13 12:51:12,599 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 12:57:04,545 - trainer - INFO - epoch: 25
+2025-06-13 12:57:04,545 - trainer - INFO -     train          : loss           : 0.56	accuracy       : 0.68	precision      : 0.66	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.70	f1_score       : 0.62	
+2025-06-13 12:57:04,546 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.64	val_recall     : 0.61	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.62	
+2025-06-13 13:02:53,584 - trainer - INFO - epoch: 26
+2025-06-13 13:02:53,584 - trainer - INFO -     train          : loss           : 0.57	accuracy       : 0.67	precision      : 0.66	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.70	f1_score       : 0.62	
+2025-06-13 13:02:53,585 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.65	val_recall     : 0.59	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.62	
+2025-06-13 13:08:49,720 - trainer - INFO - epoch: 27
+2025-06-13 13:08:49,720 - trainer - INFO -     train          : loss           : 0.56	accuracy       : 0.68	precision      : 0.66	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.71	f1_score       : 0.62	
+2025-06-13 13:08:49,720 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.64	val_recall     : 0.59	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.62	
+2025-06-13 13:08:49,765 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 13:14:41,295 - trainer - INFO - epoch: 28
+2025-06-13 13:14:41,295 - trainer - INFO -     train          : loss           : 0.56	accuracy       : 0.67	precision      : 0.66	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.70	f1_score       : 0.62	
+2025-06-13 13:14:41,296 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.64	val_recall     : 0.60	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.62	
+2025-06-13 13:20:31,370 - trainer - INFO - epoch: 29
+2025-06-13 13:20:31,370 - trainer - INFO -     train          : loss           : 0.56	accuracy       : 0.68	precision      : 0.67	recall         : 0.59	roc_auc        : 0.74	pr_auc         : 0.71	f1_score       : 0.62	
+2025-06-13 13:20:31,370 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.64	val_recall     : 0.60	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.62	
+2025-06-13 13:26:22,125 - trainer - INFO - epoch: 30
+2025-06-13 13:26:22,125 - trainer - INFO -     train          : loss           : 0.56	accuracy       : 0.68	precision      : 0.67	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.71	f1_score       : 0.62	
+2025-06-13 13:26:22,125 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.64	val_recall     : 0.60	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.62	
+2025-06-13 13:32:12,128 - trainer - INFO - epoch: 31
+2025-06-13 13:32:12,129 - trainer - INFO -     train          : loss           : 0.56	accuracy       : 0.68	precision      : 0.66	recall         : 0.59	roc_auc        : 0.74	pr_auc         : 0.71	f1_score       : 0.62	
+2025-06-13 13:32:12,129 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.64	val_recall     : 0.61	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.62	
+2025-06-13 13:38:02,846 - trainer - INFO - epoch: 32
+2025-06-13 13:38:02,846 - trainer - INFO -     train          : loss           : 0.56	accuracy       : 0.67	precision      : 0.66	recall         : 0.59	roc_auc        : 0.74	pr_auc         : 0.71	f1_score       : 0.62	
+2025-06-13 13:38:02,846 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.65	val_recall     : 0.60	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.62	
+2025-06-13 13:43:53,284 - trainer - INFO - epoch: 33
+2025-06-13 13:43:53,284 - trainer - INFO -     train          : loss           : 0.56	accuracy       : 0.68	precision      : 0.67	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.71	f1_score       : 0.62	
+2025-06-13 13:43:53,284 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.64	val_recall     : 0.60	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.62	
+2025-06-13 13:49:45,267 - trainer - INFO - epoch: 34
+2025-06-13 13:49:45,267 - trainer - INFO -     train          : loss           : 0.57	accuracy       : 0.68	precision      : 0.66	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.70	f1_score       : 0.62	
+2025-06-13 13:49:45,267 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.64	val_recall     : 0.60	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.62	
+2025-06-13 13:55:37,149 - trainer - INFO - epoch: 35
+2025-06-13 13:55:37,150 - trainer - INFO -     train          : loss           : 0.56	accuracy       : 0.68	precision      : 0.66	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.70	f1_score       : 0.62	
+2025-06-13 13:55:37,150 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.64	val_recall     : 0.61	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.62	
+2025-06-13 14:01:29,291 - trainer - INFO - epoch: 36
+2025-06-13 14:01:29,291 - trainer - INFO -     train          : loss           : 0.56	accuracy       : 0.67	precision      : 0.67	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.70	f1_score       : 0.62	
+2025-06-13 14:01:29,291 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.64	val_recall     : 0.60	val_roc_auc    : 0.74	val_pr_auc     : 0.70	val_f1_score   : 0.62	
+2025-06-13 14:07:20,664 - trainer - INFO - epoch: 37
+2025-06-13 14:07:20,664 - trainer - INFO -     train          : loss           : 0.56	accuracy       : 0.68	precision      : 0.66	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.71	f1_score       : 0.62	
+2025-06-13 14:07:20,664 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.64	val_recall     : 0.61	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.62	
+2025-06-13 14:13:12,080 - trainer - INFO - epoch: 38
+2025-06-13 14:13:12,081 - trainer - INFO -     train          : loss           : 0.56	accuracy       : 0.68	precision      : 0.66	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.71	f1_score       : 0.62	
+2025-06-13 14:13:12,081 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.64	val_recall     : 0.60	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.62	
+2025-06-13 14:13:12,081 - trainer - INFO - Validation performance didn't improve for 10 epochs. Training stops.
+2025-06-13 14:13:12,081 - test - INFO - ComboMTL(
+  (protein_embedding): Embedding(15970, 128)
+  (cell_embedding): Embedding(76, 128)
+  (drug_embedding): Embedding(764, 128)
+  (aggregation_function): Linear(in_features=384, out_features=128, bias=True)
+  (neighbor_proj): Linear(in_features=128, out_features=512, bias=True)
+  (trans_Q): Linear(in_features=384, out_features=128, bias=True)
+  (trans_K): Linear(in_features=384, out_features=128, bias=True)
+  (trans_V): Linear(in_features=384, out_features=128, bias=True)
+  (linears): ModuleList(
+    (0): Linear(in_features=128, out_features=384, bias=True)
+    (1): Linear(in_features=128, out_features=384, bias=True)
+    (2): Linear(in_features=128, out_features=384, bias=True)
+    (3): Linear(in_features=128, out_features=384, bias=True)
+  )
+  (projection): Linear(in_features=384, out_features=384, bias=True)
+  (attention_layers): ModuleList(
+    (0): Linear(in_features=128, out_features=128, bias=False)
+    (1): Linear(in_features=128, out_features=128, bias=False)
+    (2): Linear(in_features=128, out_features=128, bias=False)
+  )
+  (actP): PReLU(num_parameters=1)
+  (drop_out): Dropout(p=0.5, inplace=False)
+  (global_attn): Sequential(
+    (0): Linear(in_features=128, out_features=128, bias=True)
+    (1): GELU(approximate=none)
+    (2): Linear(in_features=128, out_features=1, bias=True)
+  )
+  (local_attn): Sequential(
+    (0): Linear(in_features=256, out_features=128, bias=True)
+    (1): GELU(approximate=none)
+    (2): Linear(in_features=128, out_features=1, bias=True)
+  )
+  (out_transform): Linear(in_features=128, out_features=128, bias=True)
+  (transform): Linear(in_features=256, out_features=256, bias=True)
+  (gate): Linear(in_features=256, out_features=256, bias=True)
+  (carry): Linear(in_features=256, out_features=256, bias=True)
+  (syfcn): Sequential(
+    (0): Linear(in_features=384, out_features=128, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.2, inplace=False)
+    (3): Linear(in_features=128, out_features=1, bias=True)
+  )
+  (sifcn): Sequential(
+    (0): Linear(in_features=256, out_features=128, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.2, inplace=False)
+    (3): Linear(in_features=128, out_features=1, bias=True)
+  )
+)
+Trainable parameters: 3155973
+2025-06-13 14:13:12,084 - test - INFO - Loading checkpoint: saved\models\DrugCombDB\0613_102936\model_best.pth ...
+2025-06-13 14:13:48,108 - test - INFO - Fold 1 results: {'loss': 0.565889180127201, 'accuracy': 0.675883920213149, 'precision': 0.665684337757435, 'recall': 0.6002060577113487, 'roc_auc': 0.7381620541018579, 'pr_auc': 0.7075599312756535, 'f1_score': 0.6305784383551163}
+2025-06-13 14:13:48,110 - test - INFO - ********* Fold 2 training *********
+2025-06-13 14:13:48,269 - test - INFO - ComboMTL(
+  (protein_embedding): Embedding(15970, 128)
+  (cell_embedding): Embedding(76, 128)
+  (drug_embedding): Embedding(764, 128)
+  (aggregation_function): Linear(in_features=384, out_features=128, bias=True)
+  (neighbor_proj): Linear(in_features=128, out_features=512, bias=True)
+  (trans_Q): Linear(in_features=384, out_features=128, bias=True)
+  (trans_K): Linear(in_features=384, out_features=128, bias=True)
+  (trans_V): Linear(in_features=384, out_features=128, bias=True)
+  (linears): ModuleList(
+    (0): Linear(in_features=128, out_features=384, bias=True)
+    (1): Linear(in_features=128, out_features=384, bias=True)
+    (2): Linear(in_features=128, out_features=384, bias=True)
+    (3): Linear(in_features=128, out_features=384, bias=True)
+  )
+  (projection): Linear(in_features=384, out_features=384, bias=True)
+  (attention_layers): ModuleList(
+    (0): Linear(in_features=128, out_features=128, bias=False)
+    (1): Linear(in_features=128, out_features=128, bias=False)
+    (2): Linear(in_features=128, out_features=128, bias=False)
+  )
+  (actP): PReLU(num_parameters=1)
+  (drop_out): Dropout(p=0.5, inplace=False)
+  (global_attn): Sequential(
+    (0): Linear(in_features=128, out_features=128, bias=True)
+    (1): GELU(approximate=none)
+    (2): Linear(in_features=128, out_features=1, bias=True)
+  )
+  (local_attn): Sequential(
+    (0): Linear(in_features=256, out_features=128, bias=True)
+    (1): GELU(approximate=none)
+    (2): Linear(in_features=128, out_features=1, bias=True)
+  )
+  (out_transform): Linear(in_features=128, out_features=128, bias=True)
+  (transform): Linear(in_features=256, out_features=256, bias=True)
+  (gate): Linear(in_features=256, out_features=256, bias=True)
+  (carry): Linear(in_features=256, out_features=256, bias=True)
+  (syfcn): Sequential(
+    (0): Linear(in_features=384, out_features=128, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.2, inplace=False)
+    (3): Linear(in_features=128, out_features=1, bias=True)
+  )
+  (sifcn): Sequential(
+    (0): Linear(in_features=256, out_features=128, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.2, inplace=False)
+    (3): Linear(in_features=128, out_features=1, bias=True)
+  )
+)
+Trainable parameters: 3155973
+2025-06-13 14:19:43,855 - trainer - INFO - epoch: 1
+2025-06-13 14:19:43,856 - trainer - INFO -     train          : loss           : 0.66	accuracy       : 0.54	precision      : 0.19	recall         : 0.06	roc_auc        : 0.58	pr_auc         : 0.52	f1_score       : 0.04	
+2025-06-13 14:19:43,856 - trainer - INFO -     validation     : val_loss       : 0.64	val_accuracy   : 0.55	val_precision  : 0.76	val_recall     : 0.02	val_roc_auc    : 0.66	val_pr_auc     : 0.60	val_f1_score   : 0.04	
+2025-06-13 14:19:43,904 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 14:25:37,714 - trainer - INFO - epoch: 2
+2025-06-13 14:25:37,714 - trainer - INFO -     train          : loss           : 0.62	accuracy       : 0.62	precision      : 0.63	recall         : 0.45	roc_auc        : 0.67	pr_auc         : 0.62	f1_score       : 0.48	
+2025-06-13 14:25:37,714 - trainer - INFO -     validation     : val_loss       : 0.60	val_accuracy   : 0.64	val_precision  : 0.64	val_recall     : 0.50	val_roc_auc    : 0.69	val_pr_auc     : 0.64	val_f1_score   : 0.56	
+2025-06-13 14:25:37,763 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 14:31:32,568 - trainer - INFO - epoch: 3
+2025-06-13 14:31:32,568 - trainer - INFO -     train          : loss           : 0.60	accuracy       : 0.64	precision      : 0.62	recall         : 0.56	roc_auc        : 0.69	pr_auc         : 0.64	f1_score       : 0.59	
+2025-06-13 14:31:32,569 - trainer - INFO -     validation     : val_loss       : 0.59	val_accuracy   : 0.65	val_precision  : 0.63	val_recall     : 0.54	val_roc_auc    : 0.70	val_pr_auc     : 0.65	val_f1_score   : 0.58	
+2025-06-13 14:31:32,618 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 14:37:27,750 - trainer - INFO - epoch: 4
+2025-06-13 14:37:27,750 - trainer - INFO -     train          : loss           : 0.59	accuracy       : 0.65	precision      : 0.64	recall         : 0.56	roc_auc        : 0.70	pr_auc         : 0.66	f1_score       : 0.59	
+2025-06-13 14:37:27,750 - trainer - INFO -     validation     : val_loss       : 0.59	val_accuracy   : 0.65	val_precision  : 0.66	val_recall     : 0.49	val_roc_auc    : 0.70	val_pr_auc     : 0.66	val_f1_score   : 0.56	
+2025-06-13 14:37:27,798 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 14:43:20,568 - trainer - INFO - epoch: 5
+2025-06-13 14:43:20,568 - trainer - INFO -     train          : loss           : 0.59	accuracy       : 0.66	precision      : 0.65	recall         : 0.56	roc_auc        : 0.71	pr_auc         : 0.67	f1_score       : 0.60	
+2025-06-13 14:43:20,568 - trainer - INFO -     validation     : val_loss       : 0.58	val_accuracy   : 0.66	val_precision  : 0.65	val_recall     : 0.53	val_roc_auc    : 0.71	val_pr_auc     : 0.68	val_f1_score   : 0.58	
+2025-06-13 14:43:20,617 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 14:49:13,902 - trainer - INFO - epoch: 6
+2025-06-13 14:49:13,903 - trainer - INFO -     train          : loss           : 0.58	accuracy       : 0.67	precision      : 0.65	recall         : 0.57	roc_auc        : 0.72	pr_auc         : 0.68	f1_score       : 0.61	
+2025-06-13 14:49:13,903 - trainer - INFO -     validation     : val_loss       : 0.58	val_accuracy   : 0.66	val_precision  : 0.67	val_recall     : 0.51	val_roc_auc    : 0.72	val_pr_auc     : 0.68	val_f1_score   : 0.58	
+2025-06-13 14:49:13,948 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 14:55:06,414 - trainer - INFO - epoch: 7
+2025-06-13 14:55:06,415 - trainer - INFO -     train          : loss           : 0.58	accuracy       : 0.67	precision      : 0.66	recall         : 0.57	roc_auc        : 0.72	pr_auc         : 0.68	f1_score       : 0.61	
+2025-06-13 14:55:06,415 - trainer - INFO -     validation     : val_loss       : 0.58	val_accuracy   : 0.66	val_precision  : 0.64	val_recall     : 0.59	val_roc_auc    : 0.72	val_pr_auc     : 0.68	val_f1_score   : 0.61	
+2025-06-13 14:55:06,465 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 15:01:01,111 - trainer - INFO - epoch: 8
+2025-06-13 15:01:01,111 - trainer - INFO -     train          : loss           : 0.57	accuracy       : 0.67	precision      : 0.66	recall         : 0.58	roc_auc        : 0.73	pr_auc         : 0.69	f1_score       : 0.61	
+2025-06-13 15:01:01,111 - trainer - INFO -     validation     : val_loss       : 0.58	val_accuracy   : 0.67	val_precision  : 0.66	val_recall     : 0.56	val_roc_auc    : 0.72	val_pr_auc     : 0.69	val_f1_score   : 0.60	
+2025-06-13 15:01:01,161 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 15:06:54,881 - trainer - INFO - epoch: 9
+2025-06-13 15:06:54,882 - trainer - INFO -     train          : loss           : 0.57	accuracy       : 0.67	precision      : 0.66	recall         : 0.58	roc_auc        : 0.73	pr_auc         : 0.69	f1_score       : 0.62	
+2025-06-13 15:06:54,882 - trainer - INFO -     validation     : val_loss       : 0.58	val_accuracy   : 0.66	val_precision  : 0.65	val_recall     : 0.57	val_roc_auc    : 0.72	val_pr_auc     : 0.69	val_f1_score   : 0.61	
+2025-06-13 15:06:54,929 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 15:12:48,259 - trainer - INFO - epoch: 10
+2025-06-13 15:12:48,259 - trainer - INFO -     train          : loss           : 0.57	accuracy       : 0.67	precision      : 0.66	recall         : 0.58	roc_auc        : 0.73	pr_auc         : 0.69	f1_score       : 0.61	
+2025-06-13 15:12:48,260 - trainer - INFO -     validation     : val_loss       : 0.58	val_accuracy   : 0.67	val_precision  : 0.64	val_recall     : 0.60	val_roc_auc    : 0.72	val_pr_auc     : 0.69	val_f1_score   : 0.62	
+2025-06-13 15:12:48,310 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 15:18:41,228 - trainer - INFO - epoch: 11
+2025-06-13 15:18:41,229 - trainer - INFO -     train          : loss           : 0.57	accuracy       : 0.67	precision      : 0.66	recall         : 0.58	roc_auc        : 0.73	pr_auc         : 0.69	f1_score       : 0.61	
+2025-06-13 15:18:41,230 - trainer - INFO -     validation     : val_loss       : 0.58	val_accuracy   : 0.66	val_precision  : 0.66	val_recall     : 0.54	val_roc_auc    : 0.72	val_pr_auc     : 0.69	val_f1_score   : 0.59	
+2025-06-13 15:24:33,674 - trainer - INFO - epoch: 12
+2025-06-13 15:24:33,674 - trainer - INFO -     train          : loss           : 0.57	accuracy       : 0.67	precision      : 0.66	recall         : 0.58	roc_auc        : 0.73	pr_auc         : 0.69	f1_score       : 0.61	
+2025-06-13 15:24:33,674 - trainer - INFO -     validation     : val_loss       : 0.58	val_accuracy   : 0.66	val_precision  : 0.65	val_recall     : 0.59	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.61	
+2025-06-13 15:30:26,947 - trainer - INFO - epoch: 13
+2025-06-13 15:30:26,948 - trainer - INFO -     train          : loss           : 0.57	accuracy       : 0.67	precision      : 0.66	recall         : 0.58	roc_auc        : 0.73	pr_auc         : 0.69	f1_score       : 0.62	
+2025-06-13 15:30:26,948 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.66	val_recall     : 0.56	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.60	
+2025-06-13 15:30:26,996 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 15:36:20,356 - trainer - INFO - epoch: 14
+2025-06-13 15:36:20,356 - trainer - INFO -     train          : loss           : 0.57	accuracy       : 0.67	precision      : 0.66	recall         : 0.58	roc_auc        : 0.73	pr_auc         : 0.69	f1_score       : 0.61	
+2025-06-13 15:36:20,356 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.66	val_recall     : 0.55	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.60	
+2025-06-13 15:36:20,411 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 15:42:13,207 - trainer - INFO - epoch: 15
+2025-06-13 15:42:13,208 - trainer - INFO -     train          : loss           : 0.57	accuracy       : 0.67	precision      : 0.66	recall         : 0.58	roc_auc        : 0.73	pr_auc         : 0.70	f1_score       : 0.61	
+2025-06-13 15:42:13,208 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.66	val_recall     : 0.56	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.61	
+2025-06-13 15:42:13,256 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 15:48:07,856 - trainer - INFO - epoch: 16
+2025-06-13 15:48:07,857 - trainer - INFO -     train          : loss           : 0.57	accuracy       : 0.67	precision      : 0.66	recall         : 0.57	roc_auc        : 0.73	pr_auc         : 0.69	f1_score       : 0.61	
+2025-06-13 15:48:07,857 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.67	val_recall     : 0.54	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.59	
+2025-06-13 15:48:07,906 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 15:54:00,608 - trainer - INFO - epoch: 17
+2025-06-13 15:54:00,608 - trainer - INFO -     train          : loss           : 0.57	accuracy       : 0.67	precision      : 0.66	recall         : 0.58	roc_auc        : 0.73	pr_auc         : 0.70	f1_score       : 0.62	
+2025-06-13 15:54:00,609 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.66	val_recall     : 0.57	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.61	
+2025-06-13 15:54:00,657 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 15:59:54,167 - trainer - INFO - epoch: 18
+2025-06-13 15:59:54,167 - trainer - INFO -     train          : loss           : 0.57	accuracy       : 0.68	precision      : 0.66	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.70	f1_score       : 0.62	
+2025-06-13 15:59:54,167 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.65	val_recall     : 0.58	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.62	
+2025-06-13 15:59:54,218 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 16:05:47,409 - trainer - INFO - epoch: 19
+2025-06-13 16:05:47,409 - trainer - INFO -     train          : loss           : 0.57	accuracy       : 0.67	precision      : 0.66	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.70	f1_score       : 0.62	
+2025-06-13 16:05:47,409 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.65	val_recall     : 0.60	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.62	
+2025-06-13 16:05:47,458 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 16:11:39,593 - trainer - INFO - epoch: 20
+2025-06-13 16:11:39,594 - trainer - INFO -     train          : loss           : 0.57	accuracy       : 0.67	precision      : 0.66	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.70	f1_score       : 0.62	
+2025-06-13 16:11:39,594 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.65	val_recall     : 0.61	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.62	
+2025-06-13 16:11:39,646 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 16:17:32,114 - trainer - INFO - epoch: 21
+2025-06-13 16:17:32,114 - trainer - INFO -     train          : loss           : 0.57	accuracy       : 0.68	precision      : 0.66	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.70	f1_score       : 0.62	
+2025-06-13 16:17:32,115 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.65	val_recall     : 0.58	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.61	
+2025-06-13 16:17:32,162 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 16:23:24,836 - trainer - INFO - epoch: 22
+2025-06-13 16:23:24,837 - trainer - INFO -     train          : loss           : 0.57	accuracy       : 0.68	precision      : 0.67	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.70	f1_score       : 0.62	
+2025-06-13 16:23:24,837 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.66	val_recall     : 0.58	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.62	
+2025-06-13 16:23:24,881 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 16:29:17,422 - trainer - INFO - epoch: 23
+2025-06-13 16:29:17,422 - trainer - INFO -     train          : loss           : 0.56	accuracy       : 0.67	precision      : 0.66	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.70	f1_score       : 0.62	
+2025-06-13 16:29:17,422 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.66	val_recall     : 0.57	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.61	
+2025-06-13 16:35:10,576 - trainer - INFO - epoch: 24
+2025-06-13 16:35:10,577 - trainer - INFO -     train          : loss           : 0.56	accuracy       : 0.68	precision      : 0.67	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.70	f1_score       : 0.62	
+2025-06-13 16:35:10,577 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.66	val_recall     : 0.57	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.61	
+2025-06-13 16:35:10,625 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 16:41:03,504 - trainer - INFO - epoch: 25
+2025-06-13 16:41:03,504 - trainer - INFO -     train          : loss           : 0.57	accuracy       : 0.67	precision      : 0.66	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.70	f1_score       : 0.62	
+2025-06-13 16:41:03,504 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.65	val_recall     : 0.58	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.62	
+2025-06-13 16:46:58,596 - trainer - INFO - epoch: 26
+2025-06-13 16:46:58,597 - trainer - INFO -     train          : loss           : 0.56	accuracy       : 0.68	precision      : 0.67	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.71	f1_score       : 0.62	
+2025-06-13 16:46:58,597 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.65	val_recall     : 0.58	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.61	
+2025-06-13 16:52:49,941 - trainer - INFO - epoch: 27
+2025-06-13 16:52:49,941 - trainer - INFO -     train          : loss           : 0.57	accuracy       : 0.68	precision      : 0.67	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.70	f1_score       : 0.62	
+2025-06-13 16:52:49,942 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.66	val_recall     : 0.59	val_roc_auc    : 0.73	val_pr_auc     : 0.70	val_f1_score   : 0.62	
+2025-06-13 16:58:41,059 - trainer - INFO - epoch: 28
+2025-06-13 16:58:41,059 - trainer - INFO -     train          : loss           : 0.56	accuracy       : 0.68	precision      : 0.66	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.70	f1_score       : 0.62	
+2025-06-13 16:58:41,059 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.65	val_recall     : 0.58	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.61	
+2025-06-13 16:58:41,105 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 17:04:33,973 - trainer - INFO - epoch: 29
+2025-06-13 17:04:33,973 - trainer - INFO -     train          : loss           : 0.56	accuracy       : 0.67	precision      : 0.67	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.71	f1_score       : 0.62	
+2025-06-13 17:04:33,974 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.65	val_recall     : 0.58	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.62	
+2025-06-13 17:10:24,668 - trainer - INFO - epoch: 30
+2025-06-13 17:10:24,669 - trainer - INFO -     train          : loss           : 0.56	accuracy       : 0.68	precision      : 0.67	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.71	f1_score       : 0.62	
+2025-06-13 17:10:24,669 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.65	val_recall     : 0.58	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.62	
+2025-06-13 17:16:14,740 - trainer - INFO - epoch: 31
+2025-06-13 17:16:14,741 - trainer - INFO -     train          : loss           : 0.56	accuracy       : 0.68	precision      : 0.67	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.71	f1_score       : 0.62	
+2025-06-13 17:16:14,741 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.65	val_recall     : 0.59	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.62	
+2025-06-13 17:22:05,544 - trainer - INFO - epoch: 32
+2025-06-13 17:22:05,544 - trainer - INFO -     train          : loss           : 0.56	accuracy       : 0.68	precision      : 0.66	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.71	f1_score       : 0.62	
+2025-06-13 17:22:05,544 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.65	val_recall     : 0.58	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.61	
+2025-06-13 17:22:05,597 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 17:27:56,398 - trainer - INFO - epoch: 33
+2025-06-13 17:27:56,398 - trainer - INFO -     train          : loss           : 0.56	accuracy       : 0.68	precision      : 0.66	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.70	f1_score       : 0.62	
+2025-06-13 17:27:56,398 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.65	val_recall     : 0.57	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.61	
+2025-06-13 17:33:46,708 - trainer - INFO - epoch: 34
+2025-06-13 17:33:46,708 - trainer - INFO -     train          : loss           : 0.56	accuracy       : 0.67	precision      : 0.66	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.71	f1_score       : 0.62	
+2025-06-13 17:33:46,708 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.65	val_recall     : 0.57	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.61	
+2025-06-13 17:39:38,539 - trainer - INFO - epoch: 35
+2025-06-13 17:39:38,539 - trainer - INFO -     train          : loss           : 0.56	accuracy       : 0.68	precision      : 0.67	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.71	f1_score       : 0.62	
+2025-06-13 17:39:38,540 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.65	val_recall     : 0.58	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.61	
+2025-06-13 17:39:38,589 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 17:45:29,764 - trainer - INFO - epoch: 36
+2025-06-13 17:45:29,764 - trainer - INFO -     train          : loss           : 0.56	accuracy       : 0.68	precision      : 0.67	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.71	f1_score       : 0.62	
+2025-06-13 17:45:29,765 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.65	val_recall     : 0.59	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.62	
+2025-06-13 17:51:21,013 - trainer - INFO - epoch: 37
+2025-06-13 17:51:21,013 - trainer - INFO -     train          : loss           : 0.56	accuracy       : 0.68	precision      : 0.67	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.71	f1_score       : 0.62	
+2025-06-13 17:51:21,013 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.65	val_recall     : 0.59	val_roc_auc    : 0.73	val_pr_auc     : 0.70	val_f1_score   : 0.62	
+2025-06-13 17:57:13,414 - trainer - INFO - epoch: 38
+2025-06-13 17:57:13,414 - trainer - INFO -     train          : loss           : 0.56	accuracy       : 0.68	precision      : 0.66	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.71	f1_score       : 0.62	
+2025-06-13 17:57:13,414 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.65	val_recall     : 0.59	val_roc_auc    : 0.73	val_pr_auc     : 0.70	val_f1_score   : 0.62	
+2025-06-13 18:03:05,335 - trainer - INFO - epoch: 39
+2025-06-13 18:03:05,335 - trainer - INFO -     train          : loss           : 0.56	accuracy       : 0.68	precision      : 0.67	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.71	f1_score       : 0.62	
+2025-06-13 18:03:05,336 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.65	val_recall     : 0.57	val_roc_auc    : 0.73	val_pr_auc     : 0.70	val_f1_score   : 0.61	
+2025-06-13 18:08:56,653 - trainer - INFO - epoch: 40
+2025-06-13 18:08:56,653 - trainer - INFO -     train          : loss           : 0.56	accuracy       : 0.68	precision      : 0.66	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.71	f1_score       : 0.62	
+2025-06-13 18:08:56,654 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.65	val_recall     : 0.58	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.61	
+2025-06-13 18:14:48,570 - trainer - INFO - epoch: 41
+2025-06-13 18:14:48,570 - trainer - INFO -     train          : loss           : 0.56	accuracy       : 0.68	precision      : 0.67	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.71	f1_score       : 0.62	
+2025-06-13 18:14:48,571 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.65	val_recall     : 0.58	val_roc_auc    : 0.73	val_pr_auc     : 0.69	val_f1_score   : 0.61	
+2025-06-13 18:20:39,781 - trainer - INFO - epoch: 42
+2025-06-13 18:20:39,781 - trainer - INFO -     train          : loss           : 0.56	accuracy       : 0.68	precision      : 0.67	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.71	f1_score       : 0.62	
+2025-06-13 18:20:39,782 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.65	val_recall     : 0.58	val_roc_auc    : 0.73	val_pr_auc     : 0.70	val_f1_score   : 0.61	
+2025-06-13 18:26:33,517 - trainer - INFO - epoch: 43
+2025-06-13 18:26:33,517 - trainer - INFO -     train          : loss           : 0.57	accuracy       : 0.67	precision      : 0.66	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.71	f1_score       : 0.62	
+2025-06-13 18:26:33,517 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.66	val_recall     : 0.58	val_roc_auc    : 0.73	val_pr_auc     : 0.70	val_f1_score   : 0.61	
+2025-06-13 18:32:24,821 - trainer - INFO - epoch: 44
+2025-06-13 18:32:24,822 - trainer - INFO -     train          : loss           : 0.56	accuracy       : 0.68	precision      : 0.67	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.71	f1_score       : 0.62	
+2025-06-13 18:32:24,822 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.66	val_recall     : 0.58	val_roc_auc    : 0.73	val_pr_auc     : 0.70	val_f1_score   : 0.61	
+2025-06-13 18:38:16,492 - trainer - INFO - epoch: 45
+2025-06-13 18:38:16,493 - trainer - INFO -     train          : loss           : 0.56	accuracy       : 0.68	precision      : 0.67	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.71	f1_score       : 0.62	
+2025-06-13 18:38:16,493 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.66	val_recall     : 0.58	val_roc_auc    : 0.73	val_pr_auc     : 0.70	val_f1_score   : 0.62	
+2025-06-13 18:44:08,301 - trainer - INFO - epoch: 46
+2025-06-13 18:44:08,301 - trainer - INFO -     train          : loss           : 0.56	accuracy       : 0.68	precision      : 0.66	recall         : 0.58	roc_auc        : 0.74	pr_auc         : 0.71	f1_score       : 0.62	
+2025-06-13 18:44:08,302 - trainer - INFO -     validation     : val_loss       : 0.57	val_accuracy   : 0.67	val_precision  : 0.66	val_recall     : 0.58	val_roc_auc    : 0.73	val_pr_auc     : 0.70	val_f1_score   : 0.62	
+2025-06-13 18:44:08,302 - trainer - INFO - Validation performance didn't improve for 10 epochs. Training stops.
+2025-06-13 18:44:08,302 - test - INFO - ComboMTL(
+  (protein_embedding): Embedding(15970, 128)
+  (cell_embedding): Embedding(76, 128)
+  (drug_embedding): Embedding(764, 128)
+  (aggregation_function): Linear(in_features=384, out_features=128, bias=True)
+  (neighbor_proj): Linear(in_features=128, out_features=512, bias=True)
+  (trans_Q): Linear(in_features=384, out_features=128, bias=True)
+  (trans_K): Linear(in_features=384, out_features=128, bias=True)
+  (trans_V): Linear(in_features=384, out_features=128, bias=True)
+  (linears): ModuleList(
+    (0): Linear(in_features=128, out_features=384, bias=True)
+    (1): Linear(in_features=128, out_features=384, bias=True)
+    (2): Linear(in_features=128, out_features=384, bias=True)
+    (3): Linear(in_features=128, out_features=384, bias=True)
+  )
+  (projection): Linear(in_features=384, out_features=384, bias=True)
+  (attention_layers): ModuleList(
+    (0): Linear(in_features=128, out_features=128, bias=False)
+    (1): Linear(in_features=128, out_features=128, bias=False)
+    (2): Linear(in_features=128, out_features=128, bias=False)
+  )
+  (actP): PReLU(num_parameters=1)
+  (drop_out): Dropout(p=0.5, inplace=False)
+  (global_attn): Sequential(
+    (0): Linear(in_features=128, out_features=128, bias=True)
+    (1): GELU(approximate=none)
+    (2): Linear(in_features=128, out_features=1, bias=True)
+  )
+  (local_attn): Sequential(
+    (0): Linear(in_features=256, out_features=128, bias=True)
+    (1): GELU(approximate=none)
+    (2): Linear(in_features=128, out_features=1, bias=True)
+  )
+  (out_transform): Linear(in_features=128, out_features=128, bias=True)
+  (transform): Linear(in_features=256, out_features=256, bias=True)
+  (gate): Linear(in_features=256, out_features=256, bias=True)
+  (carry): Linear(in_features=256, out_features=256, bias=True)
+  (syfcn): Sequential(
+    (0): Linear(in_features=384, out_features=128, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.2, inplace=False)
+    (3): Linear(in_features=128, out_features=1, bias=True)
+  )
+  (sifcn): Sequential(
+    (0): Linear(in_features=256, out_features=128, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.2, inplace=False)
+    (3): Linear(in_features=128, out_features=1, bias=True)
+  )
+)
+Trainable parameters: 3155973
+2025-06-13 18:44:08,304 - test - INFO - Loading checkpoint: saved\models\DrugCombDB\0613_102936\model_best.pth ...
+2025-06-13 18:44:51,524 - test - INFO - Fold 2 results: {'loss': 0.5649384283054603, 'accuracy': 0.6747317635198387, 'precision': 0.6674698149573342, 'recall': 0.5896591545825233, 'roc_auc': 0.7391016271962987, 'pr_auc': 0.7113317254896666, 'f1_score': 0.6257672840381292}
+2025-06-13 18:44:51,525 - test - INFO - ********* Fold 3 training *********
+2025-06-13 18:44:51,699 - test - INFO - ComboMTL(
+  (protein_embedding): Embedding(15970, 128)
+  (cell_embedding): Embedding(76, 128)
+  (drug_embedding): Embedding(764, 128)
+  (aggregation_function): Linear(in_features=384, out_features=128, bias=True)
+  (neighbor_proj): Linear(in_features=128, out_features=512, bias=True)
+  (trans_Q): Linear(in_features=384, out_features=128, bias=True)
+  (trans_K): Linear(in_features=384, out_features=128, bias=True)
+  (trans_V): Linear(in_features=384, out_features=128, bias=True)
+  (linears): ModuleList(
+    (0): Linear(in_features=128, out_features=384, bias=True)
+    (1): Linear(in_features=128, out_features=384, bias=True)
+    (2): Linear(in_features=128, out_features=384, bias=True)
+    (3): Linear(in_features=128, out_features=384, bias=True)
+  )
+  (projection): Linear(in_features=384, out_features=384, bias=True)
+  (attention_layers): ModuleList(
+    (0): Linear(in_features=128, out_features=128, bias=False)
+    (1): Linear(in_features=128, out_features=128, bias=False)
+    (2): Linear(in_features=128, out_features=128, bias=False)
+  )
+  (actP): PReLU(num_parameters=1)
+  (drop_out): Dropout(p=0.5, inplace=False)
+  (global_attn): Sequential(
+    (0): Linear(in_features=128, out_features=128, bias=True)
+    (1): GELU(approximate=none)
+    (2): Linear(in_features=128, out_features=1, bias=True)
+  )
+  (local_attn): Sequential(
+    (0): Linear(in_features=256, out_features=128, bias=True)
+    (1): GELU(approximate=none)
+    (2): Linear(in_features=128, out_features=1, bias=True)
+  )
+  (out_transform): Linear(in_features=128, out_features=128, bias=True)
+  (transform): Linear(in_features=256, out_features=256, bias=True)
+  (gate): Linear(in_features=256, out_features=256, bias=True)
+  (carry): Linear(in_features=256, out_features=256, bias=True)
+  (syfcn): Sequential(
+    (0): Linear(in_features=384, out_features=128, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.2, inplace=False)
+    (3): Linear(in_features=128, out_features=1, bias=True)
+  )
+  (sifcn): Sequential(
+    (0): Linear(in_features=256, out_features=128, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.2, inplace=False)
+    (3): Linear(in_features=128, out_features=1, bias=True)
+  )
+)
+Trainable parameters: 3155973
+2025-06-13 18:50:48,395 - trainer - INFO - epoch: 1
+2025-06-13 18:50:48,395 - trainer - INFO -     train          : loss           : 0.66	accuracy       : 0.55	precision      : 0.15	recall         : 0.00	roc_auc        : 0.60	pr_auc         : 0.55	f1_score       : 0.01	
+2025-06-13 18:50:48,395 - trainer - INFO -     validation     : val_loss       : 0.63	val_accuracy   : 0.57	val_precision  : 0.80	val_recall     : 0.07	val_roc_auc    : 0.66	val_pr_auc     : 0.62	val_f1_score   : 0.12	
+2025-06-13 18:50:48,442 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 18:56:44,146 - trainer - INFO - epoch: 2
+2025-06-13 18:56:44,146 - trainer - INFO -     train          : loss           : 0.61	accuracy       : 0.62	precision      : 0.62	recall         : 0.44	roc_auc        : 0.67	pr_auc         : 0.62	f1_score       : 0.49	
+2025-06-13 18:56:44,146 - trainer - INFO -     validation     : val_loss       : 0.60	val_accuracy   : 0.64	val_precision  : 0.60	val_recall     : 0.62	val_roc_auc    : 0.69	val_pr_auc     : 0.65	val_f1_score   : 0.61	
+2025-06-13 18:56:44,195 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 19:02:40,321 - trainer - INFO - epoch: 3
+2025-06-13 19:02:40,321 - trainer - INFO -     train          : loss           : 0.60	accuracy       : 0.64	precision      : 0.62	recall         : 0.56	roc_auc        : 0.69	pr_auc         : 0.64	f1_score       : 0.59	
+2025-06-13 19:02:40,321 - trainer - INFO -     validation     : val_loss       : 0.59	val_accuracy   : 0.64	val_precision  : 0.59	val_recall     : 0.66	val_roc_auc    : 0.70	val_pr_auc     : 0.67	val_f1_score   : 0.62	
+2025-06-13 19:02:40,369 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 19:08:36,040 - trainer - INFO - epoch: 4
+2025-06-13 19:08:36,040 - trainer - INFO -     train          : loss           : 0.59	accuracy       : 0.65	precision      : 0.63	recall         : 0.56	roc_auc        : 0.70	pr_auc         : 0.66	f1_score       : 0.59	
+2025-06-13 19:08:36,041 - trainer - INFO -     validation     : val_loss       : 0.59	val_accuracy   : 0.66	val_precision  : 0.65	val_recall     : 0.53	val_roc_auc    : 0.71	val_pr_auc     : 0.67	val_f1_score   : 0.59	
+2025-06-13 19:08:36,090 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-13 19:14:29,955 - trainer - INFO - epoch: 5
+2025-06-13 19:14:29,955 - trainer - INFO -     train          : loss           : 0.59	accuracy       : 0.66	precision      : 0.64	recall         : 0.57	roc_auc        : 0.71	pr_auc         : 0.67	f1_score       : 0.60	
+2025-06-13 19:14:29,956 - trainer - INFO -     validation     : val_loss       : 0.58	val_accuracy   : 0.67	val_precision  : 0.66	val_recall     : 0.56	val_roc_auc    : 0.72	val_pr_auc     : 0.68	val_f1_score   : 0.61	
+2025-06-13 19:14:30,003 - trainer - INFO - Saving current best: model_best.pth ...

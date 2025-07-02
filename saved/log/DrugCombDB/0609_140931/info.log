@@ -1,0 +1,59 @@
+2025-06-09 14:09:41,869 - train - INFO - ComboMTL(
+  (protein_embedding): Embedding(15970, 128)
+  (cell_embedding): Embedding(76, 128)
+  (drug_embedding): Embedding(764, 128)
+  (aggregation_function): Linear(in_features=384, out_features=128, bias=True)
+  (neighbor_proj): Linear(in_features=128, out_features=512, bias=True)
+  (trans_Q): Linear(in_features=384, out_features=128, bias=True)
+  (trans_K): Linear(in_features=384, out_features=128, bias=True)
+  (trans_V): Linear(in_features=384, out_features=128, bias=True)
+  (linears): ModuleList(
+    (0): Linear(in_features=128, out_features=384, bias=True)
+    (1): Linear(in_features=128, out_features=384, bias=True)
+    (2): Linear(in_features=128, out_features=384, bias=True)
+    (3): Linear(in_features=128, out_features=384, bias=True)
+  )
+  (projection): Linear(in_features=384, out_features=384, bias=True)
+  (attention_layers): ModuleList(
+    (0): Linear(in_features=128, out_features=128, bias=False)
+    (1): Linear(in_features=128, out_features=128, bias=False)
+    (2): Linear(in_features=128, out_features=128, bias=False)
+  )
+  (actP): PReLU(num_parameters=1)
+  (drop_out): Dropout(p=0.5, inplace=False)
+  (global_attn): Sequential(
+    (0): Linear(in_features=128, out_features=128, bias=True)
+    (1): GELU(approximate=none)
+    (2): Linear(in_features=128, out_features=1, bias=True)
+  )
+  (local_attn): Sequential(
+    (0): Linear(in_features=256, out_features=128, bias=True)
+    (1): GELU(approximate=none)
+    (2): Linear(in_features=128, out_features=1, bias=True)
+  )
+  (out_transform): Linear(in_features=128, out_features=128, bias=True)
+  (transform): Linear(in_features=256, out_features=256, bias=True)
+  (gate): Linear(in_features=256, out_features=256, bias=True)
+  (carry): Linear(in_features=256, out_features=256, bias=True)
+  (syfcn): Sequential(
+    (0): Linear(in_features=384, out_features=128, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.2, inplace=False)
+    (3): Linear(in_features=128, out_features=1, bias=True)
+  )
+  (sifcn): Sequential(
+    (0): Linear(in_features=256, out_features=128, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.2, inplace=False)
+    (3): Linear(in_features=128, out_features=1, bias=True)
+  )
+)
+Trainable parameters: 3155973
+2025-06-09 14:14:50,022 - trainer - INFO - epoch: 1
+2025-06-09 14:14:50,022 - trainer - INFO -     train          : loss           : 0.62	accuracy       : 0.61	precision      : 0.50	recall         : 0.41	roc_auc        : 0.66	pr_auc         : 0.61	f1_score       : 0.43	
+2025-06-09 14:14:50,022 - trainer - INFO -     validation     : val_loss       : 0.60	val_accuracy   : 0.64	val_precision  : 0.63	val_recall     : 0.54	val_roc_auc    : 0.69	val_pr_auc     : 0.65	val_f1_score   : 0.58	
+2025-06-09 14:14:50,086 - trainer - INFO - Saving current best: model_best.pth ...
+2025-06-09 14:20:06,518 - trainer - INFO - epoch: 2
+2025-06-09 14:20:06,518 - trainer - INFO -     train          : loss           : 0.59	accuracy       : 0.66	precision      : 0.64	recall         : 0.57	roc_auc        : 0.71	pr_auc         : 0.66	f1_score       : 0.60	
+2025-06-09 14:20:06,518 - trainer - INFO -     validation     : val_loss       : 0.58	val_accuracy   : 0.66	val_precision  : 0.64	val_recall     : 0.59	val_roc_auc    : 0.72	val_pr_auc     : 0.68	val_f1_score   : 0.61	
+2025-06-09 14:20:06,567 - trainer - INFO - Saving current best: model_best.pth ...
